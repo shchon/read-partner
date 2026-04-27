@@ -62,14 +62,10 @@ function SettingsDialog({
 }: SettingsDialogProps) {
   const sentenceModelFetch = useModelFetch({
     apiConfig,
-    isActive: activeSettingsTab === 'ai',
-    isOpen,
     onConfigChange,
   })
   const vocabularyModelFetch = useModelFetch({
     apiConfig: vocabularyApiConfig,
-    isActive: activeSettingsTab === 'ai' && !isVocabularyAiShared,
-    isOpen,
     onConfigChange: onVocabularyConfigChange,
   })
 

@@ -1,13 +1,11 @@
 import { useCallback, useEffect, useState } from 'react'
 import type { ConfigChangeHandler, ModelFetchStatus } from '../../lib/appState'
-import { fetchAvailableModels, testConnectivity, toUserFacingError } from '../../lib/openai'
+import { testConnectivity, toUserFacingError } from '../../lib/openai'
 import type { ApiConfig } from '../../types'
 import { MODEL_PAGE_SIZE, MODEL_SEARCH_THRESHOLD } from './settingsShared'
 
 type UseModelFetchOptions = {
   apiConfig: ApiConfig
-  isActive: boolean
-  isOpen: boolean
   onConfigChange: ConfigChangeHandler
 }
 
@@ -29,8 +27,6 @@ type UseModelFetchResult = {
 
 export function useModelFetch({
   apiConfig,
-  isActive,
-  isOpen,
   onConfigChange,
 }: UseModelFetchOptions): UseModelFetchResult {
   const [availableModels, setAvailableModels] = useState<string[]>([])
