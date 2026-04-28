@@ -114,15 +114,13 @@ function ActiveSentenceInspector({
           </div>
         )}
         <div className="reading-inspector-actions">
-          {mode === 'sheet' ? null : (
-            <button
+          <button
               className={`ghost-button reading-resume-button ${isPinned ? 'is-pinned' : ''}`}
               type="button"
               onClick={onSetCurrentResumeAnchor}
             >
               {isPinned ? '已记住位置' : '记住位置'}
             </button>
-          )}
           <button
             className="ghost-button reading-inspector-close"
             type="button"
